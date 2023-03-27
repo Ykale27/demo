@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "demo-43d3"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "demo-43d3"
+  template:
+    metadata:
+      labels:
+        app: "demo-43d3"
+    spec:
+      containers:
+        - name: "demo-43d3"
+          image: "demooc.azurecr.io/demo"
+          ports:
+          - containerPort: 443
